@@ -8,6 +8,9 @@ RUN apt-get update && apt-get install -y \
   unzip \
   && rm -rf /var/lib/apt/lists/*
 
+# install calibre 
+RUN apt-get update && apt-get install -y calibre
+
 # if architecture is arm64, use the arm64 version of bun
 RUN ARCH=$(uname -m) && \
   if [ "$ARCH" = "aarch64" ]; then \
@@ -103,3 +106,4 @@ ENV QTWEBENGINE_CHROMIUM_FLAGS="--no-sandbox"
 ENV NODE_ENV=production
 
 ENTRYPOINT [ "bun", "run", "dist/src/index.js" ]
+
