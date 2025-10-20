@@ -97,8 +97,9 @@ COPY --from=prerelease /app/dist /app/dist
 # COPY . .
 RUN mkdir data
 
-EXPOSE 3000/tcp
+EXPOSE 8080/tcp
 # used for calibre
 ENV QTWEBENGINE_CHROMIUM_FLAGS="--no-sandbox"
 ENV NODE_ENV=production
+
 ENTRYPOINT [ "bun", "run", "dist/src/index.js" ]
