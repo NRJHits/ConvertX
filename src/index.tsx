@@ -20,8 +20,8 @@ import { user } from "./pages/user";
 
 mkdir("./data", { recursive: true }).catch(console.error);
 
-export const uploadsDir = "./data/uploads/";
-export const outputDir = "./data/output/";
+export const uploadsDir = "/tmp/uploads/";
+export const outputDir = "/tmp/output/";
 
 const app = new Elysia({
   serve: {
